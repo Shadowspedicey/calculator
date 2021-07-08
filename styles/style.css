@@ -1,0 +1,162 @@
+html, body
+{
+  height: 100%;
+  margin: 0;
+}
+
+#container
+{
+  width: 100%;
+  height: 100%;
+  background-color: #229F74;
+
+  display: flex;
+  justify-content: center;
+}
+
+#calculator
+{
+  width: 500px;
+  height: 600px;
+  background-color: #272727;
+  align-self: center;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 5px 0 20px 5px;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+#screen
+{
+  width: 100%;
+  height: 17.5%;
+  background-color: #BCCD95;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 20px;
+}
+
+#screen-text
+{
+  user-select: none;
+
+  font-size: 6em;
+  font-family: "Digital-7";
+
+  padding-left: 0.75rem;
+  padding-bottom: 1rem;
+}
+
+#upperpart
+{
+  width: 100%;
+  height: 22.5%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.button
+{
+  width: 80%;
+  height: 70%;
+  background-color: #F15A2B;
+
+  font-size: 2.75em;
+  font-weight: bold;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 25px;
+}
+
+#lowerpart
+{
+  width: 100%;
+  height: 60%;
+
+  display: flex;
+}
+
+#copytoclipboard span
+{
+  zoom: 250%;
+}
+
+#numbers
+{
+  height: 100%;
+  width: 75%;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.number
+{
+  width: 80%;
+  height: 80%;
+  background-color: #3D3D3D;
+
+  color: white;
+  font-size: 3em;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#number0
+{
+  width: 91%;
+  grid-column: 1 / 3;
+}
+
+#operators
+{
+  width: 25%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.operator
+{
+  width: 80%;
+  height: 80%;
+  background-color: #3D3D3D;
+
+  color: white;
+  font-size: 3em;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#equals
+{
+  background-color: #F15A2B;
+}
+
+@font-face {
+  font-family: "Digital-7";
+  src: url(fonts/digital-7.ttf);
+}
