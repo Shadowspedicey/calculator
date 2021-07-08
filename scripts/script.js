@@ -145,7 +145,7 @@ window.addEventListener("keydown", (e) =>
     });
   });
   
-  const ops = ["divide", "multipy", "minus", "plus"]
+  const ops = ["divide", "multiply", "minus", "plus"]
   ops.forEach(op =>
     {
       operators.forEach(_operator =>
