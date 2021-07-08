@@ -52,6 +52,7 @@ html, body
 
   font-size: 6em;
   font-family: "Digital-7";
+  overflow: auto;
 
   padding-left: 0.75rem;
   padding-bottom: 1rem;
