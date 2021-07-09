@@ -24,10 +24,18 @@ ANS.addEventListener("click", () =>
 });
 
 const DEL = document.querySelector("#del");
-DEL.addEventListener("click", () =>
+function del()
 {
   let deletedText = screenText.textContent.slice(0, -1);
   screenText.textContent = deletedText;
+  if (!screenText.textContent.match(/[+*/-]/g))
+  {
+    operator = null;
+  }
+}
+DEL.addEventListener("click", (e) =>
+{
+  del();
 });
 
 const AC = document.querySelector("#clear");
@@ -99,7 +107,7 @@ numbers.forEach((_number) =>
 {
   _number.addEventListener("click", () =>
   {
-    if (screenText.textContent === "ERROR!" || screenText.textContent === "Fuck Off") Clear();
+    if (screenText.textContent.includes("ERROR!") || screenText.textContent === "Fuck Off") Clear();
     if (_number.id === "dot" && screenText.textContent.includes(".")) return;
     screenText.textContent += _number.textContent;
     _number.classList.toggle("pressed-red");
@@ -111,6 +119,7 @@ operators.forEach((_operator) =>
 {
   _operator.addEventListener("click", () =>
   {
+    if (screenText.textContent.includes("ERROR!") || screenText.textContent === "Fuck Off") Clear();
     if (operator == null) operator = _operator.id;
     else Calculate();
     operator = _operator.id;
@@ -131,7 +140,7 @@ window.addEventListener("keydown", (e) =>
   const nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "."];
   nums.forEach(num =>
   {
-    if (screenText.textContent === "ERROR!" || screenText.textContent === "Fuck Off") Clear();
+    if (screenText.textContent.includes("ERROR!") || screenText.textContent === "Fuck Off") Clear();
     if (num === "." && screenText.textContent.includes(".")) return;
     if (e.key == num) screenText.textContent += e.key;
     else return;
@@ -152,6 +161,7 @@ window.addEventListener("keydown", (e) =>
         {
           if (_operator.textContent == e.key && _operator.id == op)
           {
+            if (screenText.textContent.includes("ERROR!") || screenText.textContent === "Fuck Off") Clear();
             if (operator == null) operator = e.key;
             else Calculate();
             operator = op;
@@ -163,4 +173,5 @@ window.addEventListener("keydown", (e) =>
     });
   
   if (e.key === "Enter") Calculate();
+  if (e.key === "Backspace" || e.key === "Delete") del();
 });
