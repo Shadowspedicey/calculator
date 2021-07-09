@@ -174,4 +174,5 @@ window.addEventListener("keydown", (e) =>
   
   if (e.key === "Enter") Calculate();
   if (e.key === "Backspace" || e.key === "Delete") del();
+  if (e.key === "Escape") Clear();
 });
